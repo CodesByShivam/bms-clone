@@ -8,7 +8,7 @@ require("dotenv").config(); // loads the environment variables from a .env file 
 const connectDB = require("./config/db");
 
 const userRouter = require("./routes/userRoutes");
-// const moviesRouter = require("./routes/movieRoutes");
+const moviesRouter = require("./routes/movieRoutes");
 // const theatreRouter = require("./routes/theatreRoutes");
 // const showRouter = require("./routes/showRoutes");
 // const bookingRouter = require("./routes/bookingRoutes");
@@ -20,7 +20,7 @@ app.use(cors({
   origin: "http://localhost:5173",}));
 /** Routes */
 app.use("/api/users", userRouter);
-// app.use("/api/movies", moviesRouter);
+app.use("/api/movies", moviesRouter);
 // app.use("/api/theatres", theatreRouter);
 // app.use("/api/shows", showRouter);
 // app.use("/api/bookings", bookingRouter);

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Admin from "./pages/Admin";
 import Register from "./pages/Register";
 import './App.css'
 import store from "./redux/store";
@@ -23,7 +24,7 @@ function App() {
             />
              <Route path={"/login"} element={<Login />} />
             <Route path={"/register"} element={<Register />} />
-            {/*<Route
+            <Route
               path="/admin"
               element={
                 <ProtectedRoute>
@@ -31,7 +32,7 @@ function App() {
                 </ProtectedRoute>
               }
             ></Route>
-            <Route
+            {/*<Route
               path="/partner"
               element={
                 <ProtectedRoute>
