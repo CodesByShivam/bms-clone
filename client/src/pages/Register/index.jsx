@@ -79,7 +79,7 @@ function Register() {
                 htmlFor="role"
                 name="role"
                 className="d-block text-center"
-                initialValue={false}
+                initialValue={"user"}
                 rules={[{ required: true, message: "Please select an option" }]}
               >
                 <div>

@@ -9,7 +9,7 @@ const connectDB = require("./config/db");
 
 const userRouter = require("./routes/userRoutes");
 const moviesRouter = require("./routes/movieRoutes");
-// const theatreRouter = require("./routes/theatreRoutes");
+const theatreRouter = require("./routes/theatreRoutes");
 // const showRouter = require("./routes/showRoutes");
 // const bookingRouter = require("./routes/bookingRoutes");
 
@@ -21,7 +21,7 @@ app.use(cors({
 /** Routes */
 app.use("/api/users", userRouter);
 app.use("/api/movies", moviesRouter);
-// app.use("/api/theatres", theatreRouter);
+app.use("/api/theatres", theatreRouter);
 // app.use("/api/shows", showRouter);
 // app.use("/api/bookings", bookingRouter);
 
