@@ -7,6 +7,10 @@ import Admin from "./pages/Admin";
 import Partner from "./pages/Partner";
 import Register from "./pages/Register";
 import Profile from "./pages/User";
+import SingleMovie from "./pages/Home/SingleMovie";
+import BookShow from "./pages/Home/BookShow";
+import Forget from "./pages/User/ForgetPassword";
+import Reset from "./pages/User/ResetPassword";
 import './App.css'
 import store from "./redux/store";
 
@@ -24,7 +28,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-             <Route path={"/login"} element={<Login />} />
+            <Route path={"/login"} element={<Login />} />
             <Route path={"/register"} element={<Register />} />
             <Route
               path="/admin"
@@ -50,7 +54,7 @@ function App() {
                 </ProtectedRoute>
               }
             ></Route>
-            {/*<Route
+            <Route
               path="/movie/:id"
               element={
                 <ProtectedRoute>
@@ -67,7 +71,7 @@ function App() {
               }
             ></Route>
             <Route path="/forget" element={<Forget />} />
-            <Route path="/reset/:email" element={<Reset />} /> */}
+            <Route path="/reset/:email" element={<Reset />} />
           </Routes>
         </BrowserRouter>
       </div>

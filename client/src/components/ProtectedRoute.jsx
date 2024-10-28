@@ -19,7 +19,11 @@ const ProtectedRoute = ({ children }) => {
   const { Header } = Layout;
   const navItems = [
     {
-      label: "Home",
+      label: (
+        <span
+          onClick={() => navigate("/")}
+        >Home</span>
+      ),
       icon: <HomeOutlined />,
     },
     {
@@ -66,7 +70,6 @@ const ProtectedRoute = ({ children }) => {
       try {
         dispatch(ShowLoading());
         const response = await GetCurrentUser();
-        console.log(response);
         dispatch(HideLoading());
         dispatch(SetUser(response.data));
       } catch (err) {
@@ -97,8 +100,8 @@ const ProtectedRoute = ({ children }) => {
               alignItems: "center",
             }}
           >
-            <h3 className="text-white m-0">Book My Show</h3>
-            <Menu theme="dark" mode="horizontal" items={navItems}></Menu>
+            <h3 className="text-white m-0" onClick={() => navigate("/")}>Book My Show</h3>
+            <Menu theme="dark" mode="horizontal" items={navItems} />
           </Header>
           <div>{children}</div>
         </Layout>
