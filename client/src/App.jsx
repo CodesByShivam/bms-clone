@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Partner from "./pages/Partner";
 import Register from "./pages/Register";
+import Profile from "./pages/User";
 import './App.css'
 import store from "./redux/store";
 
@@ -41,7 +42,7 @@ function App() {
                 </ProtectedRoute>
               }
             ></Route>
-            {/*<Route
+            <Route
               path="/profile"
               element={
                 <ProtectedRoute>
@@ -49,7 +50,7 @@ function App() {
                 </ProtectedRoute>
               }
             ></Route>
-            <Route
+            {/*<Route
               path="/movie/:id"
               element={
                 <ProtectedRoute>
