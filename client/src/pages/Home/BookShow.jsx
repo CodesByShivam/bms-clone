@@ -118,7 +118,6 @@ const BookShow = () => {
   }, []);
 
   const onToken = async (token) => {
-    console.log(token);
     try {
       dispatch(ShowLoading());
       const response = await makePayment(
@@ -199,8 +198,9 @@ const BookShow = () => {
                 <StripeCheckout
                   token={onToken}
                   billingAddress
+                  currency="INR"
                   amount={selectedSeats.length * show.ticketPrice * 100}
-                  stripeKey="pk_test_51PY5CiRteLJygSvEwi4Zd4R5ZKaKdY8VktV02VTgbK0KA7ATkaEpsK33AmpNQvIYJIZBnbpJuKUO3QG78eFkTH9B00Wyjxc4NL"
+                  stripeKey="pk_test_51QEpxsJTDBwcccYiOlvwXASSJtL5QZRWDc7J3s77yLuP3UdhuvHAFQD9rgjvOBJF40WshCYiLd9Z1UuwUXkD7j1n00WTH1YFPu"
                 >
                   <div className="max-width-600 mx-auto">
                     <Button type="primary" shape="round" size="large" block>

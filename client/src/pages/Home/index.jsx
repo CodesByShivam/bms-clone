@@ -23,10 +23,8 @@ const Home = () => {
       } else {
         message.error(response.message);
       }
-      // dispatch(HideLoading());
     } catch (error) {
       console.log(error);
-      // dispatch(HideLoading());
     } finally {
       dispatch(HideLoading());
     }
@@ -41,52 +39,33 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <Row className="justify-content-center w-100">
-        <Col xs={{ span: 24 }} lg={{ span: 12 }}>
+    <div className="main-content">
+      <Row className="movie-search">
+        <Col span={24}>
           <Input
             placeholder="Type here to search for movies"
             onChange={handleSearch}
             prefix={<SearchOutlined />}
           />
-          <br />
-          <br />
-          <br />
-          <br />
         </Col>
       </Row>
       <Row
-        className="justify-content-center"
-        gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+        gutter={{ xs: 8, sm: 16, md: 24, lg: 48 }}
+        justify="space-around"
       >
-        {movies &&
+        {
+          movies &&
           movies
-            .filter((movie) =>
-              movie.title.toLowerCase().includes(searchText.toLowerCase())
-            )
-            .map((movie) => (
+            .filter(
+              movie => movie.title.toLowerCase().includes(searchText.toLowerCase())
+            ).map(movie => (
               <Col
-                className="mb-5"
+                className="gutter-row"
+                span={{ xs: 24, sm: 12, md: 8, lg: 6, xl: 4, xxl: 3 }}
                 key={movie._id}
-                span={{ xs: 24, sm: 24, md: 12, lg: 10 }}
               >
-                <div className="text-center">
-                  <img
-                    src={movie.poster}
-                    className="cursor-pointer"
-                    alt="Movie Poster"
-                    width={200}
-                    style={{ borderRadius: "8px" }}
-                    onClick={() => {
-                      navigate(
-                        `/movie/${movie._id}?date=${moment().format(
-                          "YYYY-MM-DD"
-                        )}`
-                      );
-                    }}
-                  />
-                </div>
-                <h3
+                <div
+                  className="text-center poster cursor-pointer"
                   onClick={() => {
                     navigate(
                       `/movie/${movie._id}?date=${moment().format(
@@ -95,10 +74,20 @@ const Home = () => {
                     );
                   }}
                 >
-                  {movie.title}
-                </h3>
+                  <img
+                    src={movie.poster}
+                    alt="Movie Poster"
+                    width={200}
+                    height={300}
+                    style={{ borderRadius: "8px" }}
+                  />
+                  <h3>
+                    {movie.title}
+                  </h3>
+                </div>
               </Col>
-            ))}
+            ))
+        }
       </Row>
     </div>
   );

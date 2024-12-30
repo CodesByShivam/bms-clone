@@ -25,7 +25,7 @@ router.post("/make-payment", authMiddleware, async (req, res) => {
     });
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,
-      currency: "usd",
+      currency: "inr",
       customer: customer.id,
       payment_method_types: ["card"],
       receipt_email: token.email,

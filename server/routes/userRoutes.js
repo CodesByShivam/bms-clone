@@ -29,12 +29,11 @@ userRouter.post("/register", async (req, res) => {
 userRouter.post("/login", async (req, res) => {
   try {
     const user = await userModel.findOne({ email: req.body.email });
-    console.log("user", user);
     if (!user) {
-      res.status(400).json({ success: false, message: "User not found" });
+      return res.status(400).json({ success: false, message: "User not found" });
     }
     if (req.body.password !== user.password) {
-      return res.send({ success: false, message: "Invalid password" });
+      return res.status(401).send({ success: false, message: "Invalid password" });
     }
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
@@ -52,7 +51,7 @@ userRouter.post("/login", async (req, res) => {
 
 userRouter.get("/get-current-user", authMiddleware, async (req, res) => {
   // console.log("headers", req.headers.authorization);
-  console.log("handler for get current user");
+  console.log("handler for get current user", req.body.userId);
   const user = await userModel.findById(req.body.userId).select("-password");
   res.send({
     success: true,

@@ -14,7 +14,6 @@ function Forget() {
       if (response.status === "success") {
         message.success(response.message);
         alert("OTP sent to your email");
-        // window.location.href = "/reset";
         navigate(`/reset/${encodeURIComponent(values.email)}`);
       } else {
         message.error(response.message);

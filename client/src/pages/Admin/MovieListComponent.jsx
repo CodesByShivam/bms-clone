@@ -9,28 +9,6 @@ import DeleteMovieModal from "./DeleteMovieModal";
 import moment from "moment";
 
 function MovieList() {
-  const fakeMovies = [
-    {
-      key: "1",
-      poster: "Image1",
-      description: "Wolverine Vs Deadpool",
-      duration: 120,
-      genre: "Action",
-      language: "English",
-      releaseDate: "2024-08-01",
-      name: "Wolverine Vs Deadpool",
-    },
-    {
-      key: "2",
-      poster: "Image2",
-      description: "Wolverine Vs Deadpool",
-      duration: 120,
-      genre: "Action",
-      language: "English",
-      releaseDate: "2024-08-01",
-      name: "Wolverine Vs Deadpool 2",
-    },
-  ];
   const tableHeadings = [
     {
       title: "Poster",
@@ -48,7 +26,7 @@ function MovieList() {
     },
     {
       title: "Movie Name",
-      dataIndex: "name",
+      dataIndex: "title",
     },
     {
       title: "Description",

@@ -1,3 +1,8 @@
+.main-content {
+  /* border: red solid 2px; */
+  margin: 20px;
+}
+
 .loader-container {
   position: fixed;
   top: 0;
@@ -95,11 +100,30 @@
 .text-center {
   text-align: center;
 }
+.movie-search {
+  margin-bottom: 50px;
+}
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.poster {
+  transition: transform .2s;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  margin-bottom: 50px;
+}
+.poster:hover {
+  transform: scale(1.2);
+}
 .cursor-pointer {
   cursor: pointer;
 }
 .inner-container {
   max-width: 1000px;
+  margin-top: 20px;
   margin-inline: auto;
 }
 .max-width-300 {
@@ -402,18 +426,7 @@ hr {
 
 
 
-
-
-
-
-
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
+/*
 .logo {
   height: 6em;
   padding: 1.5em;
