@@ -32,3 +32,6 @@ npm start
 cd client
 npm run dev
 ```
+
+## Usage
+The application starts and you can visit http://localhost:5173/ to access the application.
